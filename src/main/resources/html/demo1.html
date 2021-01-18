@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HelloWorld/列表展示</title>
+</head>
+
+<body>
+<div id="app">
+    <h3>{{message}}</h3>
+    <h4>{{movies}}</h4>
+    <ol>
+        <li v-for="item in movies">{{item}}</li>
+    </ol>
+</div>
+
+<script src="../js/vue.js"></script>
+<script>
+    const app = new Vue({
+        el: '#app',
+        data: {
+            message: 'Hello Vue.js,nice job/work',
+            movies: ['西游记','三国演义','水浒传','红楼梦']
+        }
+    })
+</script>
+</body>
+</html>
