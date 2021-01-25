@@ -5,6 +5,27 @@
     <title>计数器</title>
 </head>
 <body>
+<div id="app">
+当前数字：{{number}}<br>
+<!--<button id="add" v-on:click="number++">+</button>-->
+<!--<button id="reduce" v-on:click="number&#45;&#45;">-</button>-->
+<button @click="incre(1)">+</button>
+<button @click="incre(-1)">-</button>
+</div>
+<script src="../js/vue.js"></script>
+<script>
+    const app = new Vue({
+        el: '#app',
+        data:{
+            number: 0
+        },
+        methods:{
+            incre: function (step) {
+                this.number = this.number+step
+            }
+        }
+    })
 
+</script>
 </body>
 </html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    .class1 {
+        font-style: oblique;
+    }
+    .color {
+        color: red;
+    }
+</style>
+<body>
+    <div id="app">
+        目前市面上的单车还有：<br>
+        <ul>
+            <li v-for="m in arrays" class="class1" v-bind:class="{'color': iscolor}" @click="btnClick">{{m}}</li>
+        </ul>
+    </div>
+    <script src="../js/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                arrays: ['小黄车', '摩拜单车', '美团单车', '青桔单车'],
+                iscolor: false
+            },
+            methods: {
+                btnClick: function () {
+                    this.iscolor = true
+                }
+            }
+        })
+    </script>
+</body>
+</html>
