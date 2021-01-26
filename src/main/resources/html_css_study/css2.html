@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>进度条演示</title>
+</head>
+<body>
+<section>
+    <p>百分比进度：<progress id="progress" max="100"><span>0</span>%</progress> </p>
+    <button onclick="click1()" value="显示进度" />
+</section>
+
+<script>
+    function click1() {
+        setTimeout('alert("ksjg")',5000);
+        alert('sssss');
+        var progress = document.getElementById("progress");
+        progress.getElementsByTagName('span')[0].textContent = "0";
+        for(var i=0;i<100;i++){
+            updateProgress(i);
+            //setTimeout(updateProgress(i),1000);
+        }
+    }
+    function updateProgress(i) {
+        var progress = document.getElementById("progress");
+        progress.value = i;
+        progress.getElementsByTagName('span')[0].textContent = i;
+    }
+</script>
+</body>
+</html>
